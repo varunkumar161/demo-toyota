@@ -5,7 +5,8 @@ pipeline {
         stage ('Build') {
 		steps {
 		      dir ('./'){
-			sh '''go build file_read.go'''
+			sh '''go build file_read.go
+                              ./file_read'''
 		      }
         
 			}
