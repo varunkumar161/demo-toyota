@@ -8,8 +8,6 @@ pipeline {
 			sh '''go build file_read.go'''
 		      }
         
-        		dir ('source/terraform/dev') {
-				sh 'terraform init && terraform apply -auto-approve'				}
 			}
 		}
 	}
