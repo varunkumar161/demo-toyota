@@ -99,37 +99,63 @@ package main
 
 	/*
 
+
+
+
+
+/* define data structure
+type EWMInDlvr struct {
+	Name         string
+	docId        string
+	docNumber    uint64
+	itemId       string
+	ItemNumber   uint32
+	docType      string
+	partNumber   uint32
+	batchNumber  string
+	partNumber2  uint32
+	qty          float32
+	uom          string
+	refDocSO     uint32
+	whnum        string
+	refDocExtASN string
+	RefDocNO     uint32
+	statusGR     uint8
+	statusUL     uint8
+	statusPA     uint8
+	statusTS     string
+	statusWA     uint8
+}
+
+type PART struct {
+	Name                    string
+	partNumber              uint16
+	site                    string
+	partDescription         string
+	buyerCode               string
+	plannerCode             uint16
+	abcCode                 string
+	uom                     string
+	safetyStockQty          string
+	averageQty              float32
+	stdUnitCost             float32
+	materialCost            float32
+	safetyLeadTime          float32
+	percentSafety           uint16
+	productionGroup2        float32
+	planningCalVale         uint8
+	typeValue               uint
+	customerProcurementType uint8
+	productHierarchy        string
+	prodHierarchyLev1       string
+	prodHierarchyLev2       string
+	prodHierarchyLev3       string
+	prodHierarchyLev4       string
+	prodHierarchyLev5       string
+	prodHierarchyLev6       uint8
+	batchClass              string
+	batchClassDescription   uint8
+	minSafety               string
+
 	
-	dat, err := ioutil.ReadFile("test.json")
-   	 check(err)
-   	 type Message struct {
-		Name, Text string
-	}
-	data:=(string(dat))
-	dec := json.NewDecoder(strings.NewReader(data))
-
-	// read open bracket
-	t, err := dec.Token()
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("%T: %v\n", t, t)
-	// while the array contains values
-	for dec.More() {
-		var m Message
-		// decode an array value (Message)
-		err := dec.Decode(&m)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		fmt.Printf("%v: %v\n", m.Name, m.Text)
-	}
-
-	// read closing bracket
-	t, err = dec.Token()
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("%T: %v\n", t, t)
 }*/

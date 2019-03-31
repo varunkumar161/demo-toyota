@@ -34,9 +34,8 @@ resource "aws_instance" "toyota-demo"{
 	}
 	provisioner "remote-exec" {
           inline = [
-	     "sudo add-apt-repository ppa:longsleep/golang-backports",
-	     "sudo apt-get update",
-	     "sudo apt-get install golang-go"
+	     "sudo apt-get update -Y",
+	     "sudo apt-get install go -Y"
           ]
        }
    }
